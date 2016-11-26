@@ -1,0 +1,39 @@
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding:0;
+	margin: 0;
+}
+
+@mixin flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+height: calc(100% - 50px);
+margin-top: 40px;
+	
+}
+
+.entrar, .cadastrar, .esqueci-a-senha {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.social-network {
+	@include flex;
+	flex-direction: column;
+
+	.title {
+		margin: 10px 0;
+	}
+
+	.social-icons {
+		flex-direction: row;
+	}
+}
+
