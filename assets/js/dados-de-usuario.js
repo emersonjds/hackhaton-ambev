@@ -15,9 +15,9 @@ $(document).ready(function() {
 
 	function ajaxServer(acao, data){
 		$.ajax({
-			url      : 'https://172.16.15.165/workspace/HackathonAmbev/index.php',
+			url      : 'http://172.16.15.165/workspace/HackathonAmbev/index.php',
 			jsonp    : "callback",
-			dataType : 'JSONP',
+			dataType : 'text',
 			type     : 'POST',
 			data     : data,
 			timeout  : 90000,
@@ -25,7 +25,8 @@ $(document).ready(function() {
 				if(acao == 'INSERT_USER'){
 		          	// Next step the application porra!
 		          }
-		          $('#teste').text('1 '+JSON.stringify(result));
+		           $('#teste').text('1 '+JSON.stringify(result));
+		          console.log(result);
 		      },
 		      error :  function(result){
 			        // Ih, deu dick
