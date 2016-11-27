@@ -15,19 +15,21 @@ $(document).ready(function() {
 
 	function ajaxServer(acao, data){
 		$.ajax({
-			url      : '172.16.15.165/workspace/HackathonAmbev/index.php',
-			dataType : 'JSON',
+			url      : 'https://172.16.15.165/workspace/HackathonAmbev/index.php',
+			jsonp    : "callback",
+			dataType : 'JSONP',
 			type     : 'POST',
 			data     : data,
+			timeout  : 90000,
 			success  : function(result){
 				if(acao == 'INSERT_USER'){
 		          	// Next step the application porra!
 		          }
-		          console.log(result);
+		          $('#teste').text('1 '+JSON.stringify(result));
 		      },
 		      error :  function(result){
 			        // Ih, deu dick
-			        console.log(result);
+			        $('#teste').text('2 '+JSON.stringify(result));
 			    }
 			});
 	}
