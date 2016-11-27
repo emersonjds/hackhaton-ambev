@@ -1,3 +1,6 @@
+@import "variaveis";
+@import "dados-de-usuario";
+@import "botoes-de-acoes";
 
 
 html, body {
@@ -7,32 +10,33 @@ html, body {
 	margin: 0;
 }
 
-@mixin flex{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+main {
+	height: calc(100% - 70px); 
+	@include flex;
+}
+
+.navbar-brand {
+	padding-top: 4px;
 }
 
 main {
-height: calc(100% - 50px);
-margin-top: 40px;
-	
+	height: calc(100% - 60px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.entrar, .cadastrar, .esqueci-a-senha {
+.primeiro-acesso, .cadastrar, .esqueci-a-senha {
 	width: 100%;
-	margin-bottom: 5px;
+	margin-bottom: 1em;
 }
 
 .social-network {
 	@include flex;
 	flex-direction: column;
 
-	.title {
-		margin: 10px 0;
-	}
-
 	.social-icons {
+		margin-top: 2em;
 		flex-direction: row;
 	}
 }
